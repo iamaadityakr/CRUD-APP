@@ -69,7 +69,7 @@ function displayEmployees(allEmployees){
     console.log(id);
 
     try{
-        let resp = await fetch(`https://crud-app-2djj.onrender.com/employees${id}`,{
+        let resp = await fetch(`https://crud-app-2djj.onrender.com/employees/${id}`,{
             method: "DELETE",
         });
         console.log(resp);  
