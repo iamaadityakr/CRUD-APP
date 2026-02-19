@@ -15,41 +15,39 @@ const zipCodeEle = document.getElementById("zip-code");
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-async function getEditEmployee(){
+async function getEditEmployee() {
+  try {
+    let resp = await fetch(
+      `https://crud-app-2djj.onrender.com/employees/${id}`,
+    );
+    let data = await resp.json();
+    console.log(data);
 
-    try{
-        let resp = await fetch(`https://crud-app-2djj.onrender.com/employees/${id}`);
-        let data = await resp.json();
-        console.log(data);
-
-        firstnameEle.value = data.firstname
-        middlenameEle.value = data.middlename
-        lastnameEle.value = data.lastname
-        dobEle.value = data.dob
-        emailEle.value = data.email 
-        maritalStatusEle.value = data.maritalstatus
-        phoneNoEle.value = data.mobileno 
-        streetEle.value = data.address.street
-        stateEle.value = data.address.state
-        cityEle.value = data.address.city
-        countryEle.value = data.address.country
-        zipCodeEle.value = data.address.zip-code
-
-
-
-    } catch (err){
-        console.log(err);
-       alert("Something went wrong❌") 
-    }
+    firstnameEle.value = data.firstname;
+    middlenameEle.value = data.middlename;
+    lastnameEle.value = data.lastname;
+    dobEle.value = data.dob;
+    emailEle.value = data.email;
+    maritalStatusEle.value = data.maritalstatus;
+    phoneNoEle.value = data.mobileno;
+    streetEle.value = data.address.street;
+    stateEle.value = data.address.state;
+    cityEle.value = data.address.city;
+    countryEle.value = data.address.country;
+    zipCodeEle.value = data.address.zipcode;
+  } catch (err) {
+    console.log(err);
+    alert("Something went wrong❌");
+  }
 }
 
-window.addEventListener("DOMContentLoaded",()=>{
-    getEditEmployee()
-})
+window.addEventListener("DOMContentLoaded", () => {
+  getEditEmployee();
+});
 
 employeeFormEle.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+
   let UpdatedEmployeeData = {
     firstname: firstnameEle.value.trim(),
     middlename: middlenameEle.value.trim(),
@@ -66,17 +64,19 @@ employeeFormEle.addEventListener("submit", async (e) => {
       zipCode: zipCodeEle.value.trim(),
     },
   };
-try{
-  let resp = await fetch(`https://crud-app-2djj.onrender.com/employees/${id}`,{
-    method: "PUT",
-    headers:{
-        "Content-Type": "application/json",
-    },
-    body : JSON.stringify(UpdatedEmployeeData),
-  });
-  console.log(resp);
-} catch(err){
+  try {
+    let resp = await fetch(
+      `https://crud-app-2djj.onrender.com/employees/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(UpdatedEmployeeData),
+      },
+    );
+    console.log(resp);
+  } catch (err) {
     console.log(err);
-    
-}
+  }
 });
