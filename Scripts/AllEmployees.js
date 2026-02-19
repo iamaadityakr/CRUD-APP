@@ -40,7 +40,7 @@ function displayEmployees(allEmployees){
             <p><strong>Address :</strong></p>
             <p>
             ${emp.address.street},${emp.address.city},<br>
-            ${emp.address.state}, ${emp.address.country} - ${emp.address.zipcode}
+            ${emp.address.state}, ${emp.address.country} - ${emp.address.zipCode}
             </p>
         </section>
 

@@ -30,7 +30,7 @@ employeeFormEle.addEventListener("submit", async (e) => {
       city: cityEle.value.trim(),
       state: stateEle.value.trim(),
       country: countryEle.value.trim(),
-      zipcode: zipCodeEle.value.trim(),
+      zipCode: zipCodeEle.value.trim(),
     },
   };
   try{

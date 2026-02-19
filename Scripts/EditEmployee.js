@@ -34,7 +34,7 @@ async function getEditEmployee() {
     stateEle.value = data.address.state;
     cityEle.value = data.address.city;
     countryEle.value = data.address.country;
-    zipCodeEle.value = data.address.zipcode;
+    zipCodeEle.value = data.address.zipCode;
   } catch (err) {
     console.log(err);
     alert("Something went wrong❌");
@@ -61,7 +61,7 @@ employeeFormEle.addEventListener("submit", async (e) => {
       city: cityEle.value.trim(),
       state: stateEle.value.trim(),
       country: countryEle.value.trim(),
-      zipcode: zipCodeEle.value.trim(),
+      zipCode: zipCodeEle.value.trim(),
     },
   };
   try {
