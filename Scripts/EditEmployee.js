@@ -61,7 +61,7 @@ employeeFormEle.addEventListener("submit", async (e) => {
       city: cityEle.value.trim(),
       state: stateEle.value.trim(),
       country: countryEle.value.trim(),
-      zipCode: zipCodeEle.value.trim(),
+      zipcode: zipCodeEle.value.trim(),
     },
   };
   try {
@@ -76,6 +76,10 @@ employeeFormEle.addEventListener("submit", async (e) => {
       },
     );
     console.log(resp);
+
+     //NAVIGATION
+  window.location.href="AllEmployees.html";
+
   } catch (err) {
     console.log(err);
   }
