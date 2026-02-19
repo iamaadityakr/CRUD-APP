@@ -1,49 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-body{
-    height: 100vh;
-    width: 100%;
-}
-a{
-    color: inherit;
-    text-decoration: none;
+/* ================== RESET & GLOBAL ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*NAVBAR CSS*/
-.navbar-container{
-    height: 80px;
-    width: 100%;
-    background-color: darkblue;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
+body {
+  min-height: 100vh;
+  background: #f4f6fb;
+  color: #333;
 }
-/* .logo > img{
-    height: 50px;
-    width: 50px;
-} */
-.logo{
-    font-weight: 750;
-    font-size: 30px;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.nav-links > a{
-    margin: 5px 10px;
-    font-weight: 550;
-    border: 1px solid white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: 0.2s;
+
+/* ================== NAVBAR ================== */
+.navbar-container {
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(135deg, #0a1f44, #143c8b);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.nav-links > a:hover{
-    background-color: white;
-    color: black;
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #ffffff;
+  color: #0a1f44;
+}
+
 /* ================== FORM WRAPPER ================== */
 .form-wrapper {
   max-width: 1000px;
@@ -129,4 +138,16 @@ select:focus {
 .submit-btn:hover {
   background: linear-gradient(135deg, #0a4bb8, #1e5ed8);
   transform: translateY(-2px);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-container {
+    padding: 0 25px;
+  }
 }
